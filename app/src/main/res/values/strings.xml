@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">app</string>
+    <string name="title_home">Главная</string>
+    <string name="title_calendar">Календарь</string>
+    <string name="title_training">Тренировки</string>
+    <string name="title_profile">Профиль</string>
+</resources>
