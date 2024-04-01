@@ -22,7 +22,6 @@ import java.lang.*;
 public class MainActivity extends AppCompatActivity {
 
     private ActivityMainBinding binding;
-    private PieChart pieChart;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,18 +37,5 @@ public class MainActivity extends AppCompatActivity {
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(binding.navView, navController);
 
-        pieChart = findViewById(R.id.pieChart);
-
-        ArrayList<PieEntry> entries = new ArrayList<>();
-        entries.add(new PieEntry(25f, "Red"));
-        entries.add(new PieEntry(35f, "Blue"));
-        entries.add(new PieEntry(40f, "Green"));
-
-        PieDataSet dataSet = new PieDataSet(entries, "Pie Chart");
-        dataSet.setColors(Color.RED, Color.BLUE, Color.GREEN);
-
-        PieData data = new PieData(dataSet);
-        pieChart.setData(data);
-        pieChart.invalidate(); // refresh chart
     }
 }
