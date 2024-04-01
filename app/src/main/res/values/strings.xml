@@ -6,4 +6,12 @@
     <string name="title_profile">Профиль</string>
     <string name="checkState">Оценить свое состояние</string>
     <string name="startWorkout">Начать тренировку</string>
+    <string name="name">Имя</string>
+    <string name="inputName">Введите своё имя</string>
+    <string name="age">Возраст</string>
+    <string name="inputAge">В годах</string>
+    <string name="sex">Пол</string>
+    <string name="sexInput">Выберите пол</string>
+    <string name="activity">Уровень подвижности</string>
+    <string name="amount">Количество тренировок в месяц</string>
 </resources>
