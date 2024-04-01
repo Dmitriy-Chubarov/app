@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+
 import com.example.app.R;
 
 import androidx.annotation.NonNull;
@@ -24,6 +25,7 @@ public class HomeFragment extends Fragment {
 
     private FragmentHomeBinding binding;
     private PieChart pieChart;
+
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         HomeViewModel homeViewModel =
@@ -33,12 +35,13 @@ public class HomeFragment extends Fragment {
         View root = binding.getRoot();
         pieChart = (PieChart) root.findViewById(R.id.pieChart);
         ArrayList<PieEntry> entries = new ArrayList<>();
-        entries.add(new PieEntry(25f, "Red"));
-        entries.add(new PieEntry(35f, "Blue"));
-        entries.add(new PieEntry(40f, "Green"));
-
+        entries.add(new PieEntry(25f, "Выполненные тренировки"));
+        entries.add(new PieEntry(35f, "Пропущенные тренировки"));
         PieDataSet dataSet = new PieDataSet(entries, "Pie Chart");
-        dataSet.setColors(Color.RED, Color.BLUE, Color.GREEN);
+        dataSet.setColors(Color.BLUE, Color.GRAY);
+        dataSet.setValueTextSize(25f);
+        dataSet.setValueTextColor(Color.BLACK);
+        pieChart.setHoleColor(Color.TRANSPARENT);
 
         PieData data = new PieData(dataSet);
         pieChart.setData(data);
