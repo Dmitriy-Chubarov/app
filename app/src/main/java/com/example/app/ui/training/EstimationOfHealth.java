@@ -64,8 +64,9 @@ public class EstimationOfHealth extends AppCompatActivity {
         estimBtnBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent estimGoBack = new Intent(EstimationOfHealth.this, TrainingFragment.class);
-                startActivity(estimGoBack);
+                //Intent estimGoBack = new Intent(EstimationOfHealth.this, TrainingFragment.class);
+                //startActivity(estimGoBack);
+                finish();
             }
         });
     }
