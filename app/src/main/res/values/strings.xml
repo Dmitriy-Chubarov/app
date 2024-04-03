@@ -6,4 +6,8 @@
     <string name="title_profile">Профиль</string>
     <string name="checkState">Оценить свое состояние</string>
     <string name="startWorkout">Начать тренировку</string>
+    <string name="workoutText">workoutText</string>
+    <string name="finishWorkout">Завершить тренировку</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

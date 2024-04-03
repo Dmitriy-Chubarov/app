@@ -11,7 +11,23 @@
         android:id="@+id/workoutText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="workoutText"
-        tools:layout_editor_absoluteX="166dp"
-        tools:layout_editor_absoluteY="342dp" />
+        android:text="@string/workoutText"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.28" />
+
+    <Button
+        android:id="@+id/buttonFinish"
+        android:layout_width="169dp"
+        android:layout_height="70dp"
+        android:text="@string/finishWorkout"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.794" />
 </androidx.constraintlayout.widget.ConstraintLayout>
