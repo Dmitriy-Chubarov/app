@@ -1,5 +1,6 @@
 package com.example.app.ui.training;
 
+import static com.example.app.R.id.button;
 import static com.example.app.R.id.button2;
 
 import android.content.Intent;
@@ -31,6 +32,7 @@ public class TrainingFragment extends Fragment {
     Spinner type1;
     Spinner level1;
     Button btnStartTraining;
+    Button btnStartHealth;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -43,6 +45,7 @@ public class TrainingFragment extends Fragment {
         initlevelspinnerfooter();
 
         btnStartTraining = (Button) rootView.findViewById(button2);
+        btnStartHealth = (Button) rootView.findViewById(button);
         View.OnClickListener oclBtnOk = (new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -52,6 +55,15 @@ public class TrainingFragment extends Fragment {
             }
         });
 
+        View.OnClickListener onClkBtnHealth = (new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intentHealth = new Intent(getActivity(), EstimationOfHealth.class);
+                startActivity(intentHealth);
+            }
+        });
+
+        btnStartHealth.setOnClickListener(onClkBtnHealth);
         btnStartTraining.setOnClickListener(oclBtnOk);
 
         return rootView;
