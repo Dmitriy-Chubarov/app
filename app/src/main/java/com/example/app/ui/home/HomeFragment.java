@@ -24,6 +24,7 @@ import com.github.mikephil.charting.data.PieDataSet;
 import com.github.mikephil.charting.data.PieEntry;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class HomeFragment extends Fragment {
 
@@ -39,16 +40,18 @@ public class HomeFragment extends Fragment {
         View root = binding.getRoot();
 
         pieChart = (PieChart) root.findViewById(R.id.pieChart);
+        pieChart.getDescription().setEnabled(false);
 
         ArrayList<PieEntry> entries = new ArrayList<>();
-        entries.add(new PieEntry(25f, "Выполненные тренировки"));
-        entries.add(new PieEntry(35f, "Пропущенные тренировки"));
+        entries.add(new PieEntry(25f, "Выполнено"));
+        entries.add(new PieEntry(35f, "Пропущено"));
         PieDataSet dataSet = new PieDataSet(entries, "Pie Chart");
 
         int purple500 = 0xFF6200EE;
         dataSet.setColors(purple500, Color.GRAY);
         dataSet.setValueTextSize(25f);
-        dataSet.setValueTextColor(Color.BLACK);
+        dataSet.setValueTextColors(Arrays.asList(Color.GRAY, purple500));
+        pieChart.setEntryLabelColor(Color.BLACK);
         pieChart.setHoleColor(Color.TRANSPARENT);
 
         PieData data = new PieData(dataSet);
@@ -56,6 +59,7 @@ public class HomeFragment extends Fragment {
         pieChart.invalidate(); // refresh chart
 
         BarChart barChart = (BarChart) root.findViewById(R.id.barChart);
+        barChart.getDescription().setEnabled(false);
 
         ArrayList<BarEntry> entries2 = new ArrayList<>();
         entries2.add(new BarEntry(1, 20));
