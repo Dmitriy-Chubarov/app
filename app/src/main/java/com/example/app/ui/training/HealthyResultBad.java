@@ -32,8 +32,9 @@ public class HealthyResultBad extends AppCompatActivity {
         badBtnBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent badGoBack = new Intent(HealthyResultBad.this, TrainingFragment.class);
-                startActivity(badGoBack);
+                //Intent badGoBack = new Intent(HealthyResultBad.this, TrainingFragment.class);
+                //startActivity(badGoBack);
+                finish();
             }
         });
 
