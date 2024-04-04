@@ -16,7 +16,7 @@ dependencyResolutionManagement {
     repositories {
         google()
         mavenCentral()
-        maven{ url = uri("https://mvnrepository.com/artifact/org.xerial/sqlite-jdbc")}
+        maven{ url = uri("https://jitpack.io")}
     }
 }
 
