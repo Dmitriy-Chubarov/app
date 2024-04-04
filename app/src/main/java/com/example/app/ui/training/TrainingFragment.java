@@ -30,8 +30,8 @@ public class TrainingFragment extends Fragment {
     private String[] levels = {"Легкий", "Умеренный", "Интенсивный"};
     Spinner type1;
     Spinner level1;
-    Button btnStartHealth;
     Button btnStartTraining;
+    Button btnStartHealth;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -43,9 +43,9 @@ public class TrainingFragment extends Fragment {
         level1 = rootView.findViewById(R.id.level);
         initlevelspinnerfooter();
 
+        btnStartTraining = (Button) rootView.findViewById(button2);
         btnStartHealth = (Button) rootView.findViewById(button);
 
-        btnStartTraining = (Button) rootView.findViewById(button2);
         View.OnClickListener oclBtnOk = (new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -64,7 +64,6 @@ public class TrainingFragment extends Fragment {
         });
 
         btnStartHealth.setOnClickListener(onClkBtnHealth);
-
         btnStartTraining.setOnClickListener(oclBtnOk);
 
         return rootView;

@@ -1,6 +1,140 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+
+    <EditText
+        android:id="@+id/editNameText"
+        android:layout_width="267dp"
+        android:layout_height="50dp"
+        android:textSize="28sp"
+        android:background="@null"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="@string/inputName"
+        android:inputType="text"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.454"
+        app:layout_constraintStart_toEndOf="@+id/NameView"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <EditText
+        android:id="@+id/editAgeText"
+        android:layout_width="267dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="50dp"
+        android:background="@null"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="@string/inputAge"
+        android:inputType="number"
+        android:textSize="28sp"
+        app:layout_constraintStart_toEndOf="@+id/AgeView"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
+
+    <Spinner
+        android:id="@+id/sexes"
+        android:layout_width="142dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="216dp"
+        android:layout_marginTop="100dp"
+        android:textSize="28sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
+
+    <Spinner
+        android:id="@+id/activity"
+        android:layout_width="142dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="200dp"
+        android:textSize="28sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.802"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
+
+    <Spinner
+        android:id="@+id/amount"
+        android:layout_width="142dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="320dp"
+        android:textSize="28sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.802"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/NameView"
+        android:layout_width="78dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="8dp"
+        android:gravity="left"
+        android:text="@string/name"
+        android:textColor="@color/black"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/AgeView"
+        android:layout_width="118dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="8dp"
+        android:gravity="left"
+        android:text="@string/age"
+        android:textColor="@color/black"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/NameView" />
+    <TextView
+        android:id="@+id/SexView"
+        android:layout_width="118dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="8dp"
+        android:gravity="left"
+        android:text="@string/sex"
+        android:textColor="@color/black"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/AgeView" />
+    <TextView
+        android:id="@+id/ActivityView"
+        android:layout_width="400dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="8dp"
+        android:gravity="left"
+        android:text="@string/activity"
+        android:textColor="@color/black"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/SexView" />
+
+    <TextView
+        android:id="@+id/AmountView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="50dp"
+        android:gravity="left"
+        android:text="@string/amount"
+        android:textColor="@color/black"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ActivityView" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
