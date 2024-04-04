@@ -18,7 +18,6 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.ViewModelProvider;
 
 import com.example.app.R;
 import com.example.app.WorkoutActivity;
@@ -46,6 +45,7 @@ public class TrainingFragment extends Fragment {
 
         btnStartTraining = (Button) rootView.findViewById(button2);
         btnStartHealth = (Button) rootView.findViewById(button);
+
         View.OnClickListener oclBtnOk = (new View.OnClickListener() {
             @Override
             public void onClick(View v) {
