@@ -108,7 +108,6 @@ public class ProfileFragment extends Fragment {
             }
         });
     }
-
     @Override
     public void onDestroyView() {
         super.onDestroyView();
