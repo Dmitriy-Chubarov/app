@@ -86,7 +86,6 @@ public class WorkoutActivity extends AppCompatActivity {
                     DatabaseHelper.COLUMN_TYPE + "=?", new String[]{"сила"});
             userCursor.moveToFirst();
 
-            System.out.println("11");
             return userCursor.getString(2);
         } catch (Exception e) {
             e.printStackTrace();
