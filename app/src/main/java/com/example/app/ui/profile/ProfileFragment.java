@@ -1,5 +1,9 @@
 package com.example.app.ui.profile;
 
+import android.app.Activity;
+import android.content.Context;
+import android.widget.ArrayAdapter;
+import android.annotation.SuppressLint;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.text.InputFilter;
@@ -10,6 +14,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -21,6 +26,7 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
+import com.example.app.MainActivity;
 import com.example.app.R;
 import com.example.app.databinding.FragmentProfileBinding;
 
@@ -37,7 +43,7 @@ public class ProfileFragment extends Fragment {
     ImageView strength5;
     ImageView strength10;
     ImageView strength30;
-    Spinner sexS;
+    com.google.android.material.textfield.MaterialAutoCompleteTextView sexS;
     Spinner activityS;
     Button saveButton;
     EditText editAmount;
@@ -50,8 +56,13 @@ public class ProfileFragment extends Fragment {
     String sex;
     String name;
     String levelOfActivity;
+    Context thiscontext;
 
 
+    AutoCompleteTextView autoCompleteTxt;
+    ArrayAdapter<String> adapterItems;
+
+    @SuppressLint("WrongViewCast")
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         ProfileViewModel profileViewModel =
@@ -71,7 +82,7 @@ public class ProfileFragment extends Fragment {
             public void onClick(View view) {
                 age = Integer.parseInt(String.valueOf(forAge.getText()));
                 name = String.valueOf(forName.getText());
-                sex = sexS.getSelectedItem().toString();
+                sex = sexS.toString();
                 levelOfActivity = activityS.getSelectedItem().toString();
                 neededSessions = Integer.parseInt(String.valueOf(editAmount.getText()));
             }
@@ -92,6 +103,19 @@ public class ProfileFragment extends Fragment {
         {
             days30.setImageResource(R.drawable.thirtydays);
         }
+        String[] sex_items = {"Женский", "Мужской"};
+
+        autoCompleteTxt = rootView.findViewById(R.id.sexes);
+        adapterItems = new ArrayAdapter<String>(getActivity(), R.layout.dropdown_item, sex_items);
+        autoCompleteTxt.setAdapter(adapterItems);
+
+//        autoCompleteTxt.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+//
+//            @Override
+//            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+//                String item = parent.getItemAtPosition(position).toString();
+//            }
+//        });
         return rootView;
     }
 
