@@ -122,14 +122,14 @@ public class ProfileFragment extends Fragment {
 
     private void initsexspinnerfooter() {
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(getActivity(),
-                android.R.layout.simple_spinner_item, sexes);
+android.R.layout.simple_spinner_item, sexes);
         adapter.setDropDownViewResource(android.R.layout.simple_dropdown_item_1line);
         sexS.setAdapter(adapter);
         sexS.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 Log.v("item", (String) parent.getItemAtPosition(position));
-                ((TextView) parent.getChildAt(0)).setTextColor(Color.WHITE);
+                //((TextView) parent.getChildAt(0)).setTextColor(Color.WHITE);
             }
 
             @Override
