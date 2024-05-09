@@ -23,6 +23,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
@@ -34,8 +35,8 @@ import com.example.app.databinding.FragmentProfileBinding;
 public class ProfileFragment extends Fragment {
 
     private FragmentProfileBinding binding;
-    private String[] sexes = {"Мужчина", "Женщина"};
-    private String[] activities = {"Низкий", "Умеренный", "Высокий"};
+    private String[] sexes = {"Муж", "Жен"};
+    private String[] activities = {"Малоподвижный", "Умеренный", "Активный"};
 
     ImageView days5;
     ImageView days10;
@@ -44,7 +45,8 @@ public class ProfileFragment extends Fragment {
     ImageView strength10;
     ImageView strength30;
     com.google.android.material.textfield.MaterialAutoCompleteTextView sexS;
-    Spinner activityS;
+
+    com.google.android.material.textfield.MaterialAutoCompleteTextView activityS;
     Button saveButton;
     EditText editAmount;
     EditText forName;
@@ -56,11 +58,13 @@ public class ProfileFragment extends Fragment {
     String sex;
     String name;
     String levelOfActivity;
-    Context thiscontext;
 
 
     AutoCompleteTextView autoCompleteTxt;
+    AutoCompleteTextView autoCompleteTxtAct;
     ArrayAdapter<String> adapterItems;
+    ArrayAdapter<String> adapterItemsAct;
+
 
     @SuppressLint("WrongViewCast")
     public View onCreateView(@NonNull LayoutInflater inflater,
@@ -83,7 +87,7 @@ public class ProfileFragment extends Fragment {
                 age = Integer.parseInt(String.valueOf(forAge.getText()));
                 name = String.valueOf(forName.getText());
                 sex = sexS.toString();
-                levelOfActivity = activityS.getSelectedItem().toString();
+                levelOfActivity = activityS.toString();
                 neededSessions = Integer.parseInt(String.valueOf(editAmount.getText()));
             }
         });
@@ -103,21 +107,24 @@ public class ProfileFragment extends Fragment {
         {
             days30.setImageResource(R.drawable.thirtydays);
         }
-        String[] sex_items = {"Женский", "Мужской"};
+        return rootView;
 
-        autoCompleteTxt = rootView.findViewById(R.id.sexes);
-        adapterItems = new ArrayAdapter<String>(getActivity(), R.layout.dropdown_item, sex_items);
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        autoCompleteTxt = requireView().findViewById(R.id.sexes);
+        adapterItems = new ArrayAdapter<String>(requireContext(), R.layout.drop_down_item, sexes);
         autoCompleteTxt.setAdapter(adapterItems);
 
-//        autoCompleteTxt.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-//
-//            @Override
-//            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-//                String item = parent.getItemAtPosition(position).toString();
-//            }
-//        });
-        return rootView;
+        autoCompleteTxtAct = requireView().findViewById(R.id.activities);
+        adapterItemsAct = new ArrayAdapter<String>(requireContext(), R.layout.drop_down_item, activities);
+        autoCompleteTxtAct.setAdapter(adapterItemsAct);
+        autoCompleteTxt.requestFocus();
+        autoCompleteTxtAct.requestFocus();
     }
+
 
     public class MinMaxFilter implements InputFilter {
         private int minValue;
@@ -146,7 +153,7 @@ public class ProfileFragment extends Fragment {
 
     private void initsexspinnerfooter() {
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(getActivity(),
-android.R.layout.simple_spinner_item, sexes);
+                android.R.layout.simple_spinner_item, sexes);
         adapter.setDropDownViewResource(android.R.layout.simple_dropdown_item_1line);
         sexS.setAdapter(adapter);
         sexS.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {

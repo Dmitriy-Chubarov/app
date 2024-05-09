@@ -11,6 +11,7 @@
         android:layout_height="53dp"
         android:background="@null"
         android:ems="10"
+        android:fontFamily="@font/montserrat"
         android:gravity="center"
         android:hint="@string/inputName"
         android:inputType="text"
@@ -25,9 +26,10 @@
     <EditText
         android:id="@+id/editAgeText"
         android:layout_width="235dp"
-        android:layout_height="34dp"
+        android:layout_height="44dp"
         android:background="@null"
         android:ems="10"
+        android:fontFamily="@font/montserrat"
         android:gravity="center"
         android:hint="@string/inputAge"
         android:inputType="number"
@@ -42,10 +44,10 @@
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/sexesLayout"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
-        android:layout_width="142dp"
-        android:layout_height="50dp"
+        android:layout_width="130dp"
+        android:layout_height="60dp"
         android:layout_marginTop="20dp"
-        android:layout_marginEnd="120dp"
+        android:layout_marginEnd="190dp"
         android:hint="Пол"
         android:textSize="28sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -53,36 +55,52 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editAgeText">
 
-
         <AutoCompleteTextView
             android:id="@+id/sexes"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:fontFamily="@font/montserrat"
             android:inputType="none"
             android:text="Пол" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
-    <Spinner
-        android:id="@+id/activities"
-        android:layout_width="142dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="40dp"
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/activityLayout"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+        android:layout_width="220dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="50dp"
+        android:hint="Образ жизни"
         android:textSize="28sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.425"
-        app:layout_constraintTop_toBottomOf="@+id/editAgeText"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintHorizontal_bias="0.347"
+        app:layout_constraintStart_toEndOf="@+id/sexesLayout"
+        app:layout_constraintTop_toBottomOf="@+id/editAgeText">
+
+        <AutoCompleteTextView
+            android:id="@+id/activities"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:fontFamily="@font/montserrat"
+            android:inputType="none"
+            android:text="Образ жизни"
+            tools:layout_editor_absoluteX="134dp"
+            tools:layout_editor_absoluteY="293dp" />
+    </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/textInputLayout"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="50dp"
+        android:layout_marginStart="35dp"
         android:layout_marginTop="20dp"
-        android:layout_marginEnd="50dp"
+        android:layout_marginEnd="35dp"
         android:hint="Количество занятий в месяц"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -93,6 +111,7 @@
             android:id="@+id/editAmountText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/montserrat"
             android:inputType="number"
             tools:layout_editor_absoluteX="5dp"
             tools:layout_editor_absoluteY="170dp" />
@@ -103,6 +122,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="28dp"
+        android:fontFamily="@font/montserrat"
         android:gravity="left"
         android:text="@string/Achievements"
         android:textColor="@color/black"
@@ -115,9 +135,10 @@
 
     <Button
         android:id="@+id/saveButton"
-        android:layout_width="258dp"
+        android:layout_width="158dp"
         android:layout_height="55dp"
         android:layout_marginTop="40dp"
+        android:fontFamily="@font/montserrat"
         android:onClick="saveButtonClick"
         android:text="@string/Save"
         app:layout_constraintEnd_toEndOf="parent"
