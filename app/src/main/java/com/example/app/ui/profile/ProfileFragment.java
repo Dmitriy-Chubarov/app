@@ -73,9 +73,7 @@ public class ProfileFragment extends Fragment {
                 new ViewModelProvider(this).get(ProfileViewModel.class);
         View rootView = inflater.inflate(R.layout.fragment_profile, container, false);
         sexS = rootView.findViewById(R.id.sexes);
-        initsexspinnerfooter();
         activityS = rootView.findViewById(R.id.activities);
-        initactivityspinnerfooter();
         editAmount = rootView.findViewById(R.id.editAmountText);
         editAmount.setFilters(new InputFilter[]{new MinMaxFilter(1, 30)});
         forName = rootView.findViewById(R.id.editNameText);
@@ -149,43 +147,6 @@ public class ProfileFragment extends Fragment {
             // Reject the input
             return "";
         }
-    }
-
-    private void initsexspinnerfooter() {
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(getActivity(),
-                android.R.layout.simple_spinner_item, sexes);
-        adapter.setDropDownViewResource(android.R.layout.simple_dropdown_item_1line);
-        sexS.setAdapter(adapter);
-        sexS.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                Log.v("item", (String) parent.getItemAtPosition(position));
-                //((TextView) parent.getChildAt(0)).setTextColor(Color.WHITE);
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-                // TODO Auto-generated method stub
-            }
-        });
-    }
-
-    private void initactivityspinnerfooter() {
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(getActivity(),
-                android.R.layout.simple_spinner_item, activities);
-        adapter.setDropDownViewResource(android.R.layout.simple_dropdown_item_1line);
-        activityS.setAdapter(adapter);
-        activityS.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                Log.v("item", (String) parent.getItemAtPosition(position));
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-                // TODO Auto-generated method stub
-            }
-        });
     }
     @Override
     public void onDestroyView() {
