@@ -75,7 +75,7 @@ public class HomeFragment extends Fragment {
         pieChart.getDescription().setEnabled(false);
 
         ArrayList<PieEntry> entries = new ArrayList<>();
-        entries.add(new PieEntry(25f, "Выполнено"));
+        entries.add(new PieEntry(65f, "Выполнено"));
         entries.add(new PieEntry(35f, "Пропущено"));
         PieDataSet dataSet = new PieDataSet(entries, "");
 

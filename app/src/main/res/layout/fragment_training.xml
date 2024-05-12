@@ -20,7 +20,7 @@
         android:id="@+id/button"
         android:layout_width="275dp"
         android:layout_height="67dp"
-        android:backgroundTint="#FC8086"
+        android:backgroundTint="@color/pink"
         android:text="@string/checkState"
         android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="@+id/imageView11"
