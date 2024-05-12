@@ -114,8 +114,6 @@ public class HomeFragment extends Fragment {
         barChart.getAxisRight().setDrawGridLines(false);
         barChart.getAxisRight().setDrawLabels(false);
 
-
-
         ArrayList<BarEntry> entries2 = new ArrayList<>();
         entries2.add(new BarEntry(1, 20));
         entries2.add(new BarEntry(2, 25));
