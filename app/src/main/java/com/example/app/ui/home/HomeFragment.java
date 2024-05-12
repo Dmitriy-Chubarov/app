@@ -18,6 +18,7 @@ import androidx.lifecycle.ViewModelProvider;
 import com.example.app.databinding.FragmentHomeBinding;
 import com.github.mikephil.charting.charts.BarChart;
 import com.github.mikephil.charting.charts.PieChart;
+import com.github.mikephil.charting.components.Legend;
 import com.github.mikephil.charting.data.BarData;
 import com.github.mikephil.charting.data.BarDataSet;
 import com.github.mikephil.charting.data.BarEntry;
@@ -76,21 +77,44 @@ public class HomeFragment extends Fragment {
         ArrayList<PieEntry> entries = new ArrayList<>();
         entries.add(new PieEntry(25f, "Выполнено"));
         entries.add(new PieEntry(35f, "Пропущено"));
-        PieDataSet dataSet = new PieDataSet(entries, "Pie Chart");
+        PieDataSet dataSet = new PieDataSet(entries, "");
 
-        int purple500 = 0xFF6200EE;
-        dataSet.setColors(purple500, Color.GRAY);
+        int pink = Color.parseColor("#FC8086");
+        dataSet.setColors(pink, Color.LTGRAY);
         dataSet.setValueTextSize(25f);
-        dataSet.setValueTextColors(Arrays.asList(Color.GRAY, purple500));
-        pieChart.setEntryLabelColor(Color.BLACK);
+        dataSet.setValueTextColors(Arrays.asList(Color.GRAY, pink));
+        pieChart.setHoleRadius(75);
         pieChart.setHoleColor(Color.TRANSPARENT);
+
 
         PieData data = new PieData(dataSet);
         pieChart.setData(data);
         pieChart.invalidate(); // refresh chart
+        pieChart.setDrawSliceText(false);
+        pieChart.setDrawMarkers(false);
+        data.setDrawValues(false);
+        pieChart.getDescription().setEnabled(false);
+        Legend l = pieChart.getLegend(); // get legend of pie
+        l.setVerticalAlignment(Legend.LegendVerticalAlignment.CENTER); // set vertical alignment for legend
+        l.setHorizontalAlignment(Legend.LegendHorizontalAlignment.RIGHT); // set horizontal alignment for legend
+        l.setOrientation(Legend.LegendOrientation.VERTICAL);
+        l.setTextColor(Color.WHITE);
+        l.setFormSize(20f);
+        l.setTextSize(20f);
+        l.setDrawInside(false);
 
         barChart = (BarChart) root.findViewById(R.id.barChart);
         barChart.getDescription().setEnabled(false);
+
+        barChart.getXAxis().setDrawGridLines(false);
+        barChart.getAxisLeft().setDrawGridLines(false);
+        barChart.getXAxis().setDrawLabels(false);
+        barChart.getAxisLeft().setDrawLabels(false);
+
+        barChart.getAxisRight().setDrawGridLines(false);
+        barChart.getAxisRight().setDrawLabels(false);
+
+
 
         ArrayList<BarEntry> entries2 = new ArrayList<>();
         entries2.add(new BarEntry(1, 20));
@@ -99,13 +123,10 @@ public class HomeFragment extends Fragment {
         entries2.add(new BarEntry(4, 5));
         entries2.add(new BarEntry(5, 50));
         entries2.add(new BarEntry(6, 10));
-        BarDataSet dataSet2 = new BarDataSet(entries2, "Label");
-
-        int teal = 0xFF03DAC5;
-        dataSet2.setLabel("Количество тренировок в месяц");
-        dataSet2.setColor(teal);
-        dataSet2.setValueTextColor(Color.BLACK);
-        dataSet2.setValueTextSize(15f);
+        BarDataSet dataSet2 = new BarDataSet(entries2, "");
+        barChart.getLegend().setEnabled(false);
+        dataSet2.setColor(pink);
+        dataSet2.setDrawValues(false);
         BarData data2 = new BarData(dataSet2);
         barChart.setData(data2);
         barChart.invalidate();

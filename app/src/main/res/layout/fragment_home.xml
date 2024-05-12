@@ -16,47 +16,117 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-<!--            <CalendarView-->
-<!--                android:id="@+id/calendarView"-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                app:layout_constraintEnd_toEndOf="parent"-->
-<!--                app:layout_constraintHorizontal_bias="0.491"-->
-<!--                app:layout_constraintStart_toStartOf="parent"-->
-<!--                app:layout_constraintTop_toTopOf="parent" />-->
             <com.applandeo.materialcalendarview.CalendarView
                 android:id="@+id/calendarView"
-                app:headerColor="@color/purple_500"
-                app:firstDayOfWeek="monday"
-                app:abbreviationsBarColor="@color/teal_200"
                 android:layout_width="match_parent"
-                android:layout_height="400dp" />
+                android:layout_height="371dp"
+                app:abbreviationsBarColor="@color/white"
+                app:firstDayOfWeek="monday"
+                app:headerColor="@color/purple_500"
+                app:pagesColor="@color/white"/>
+
+            <View
+                android:id="@+id/view"
+                android:layout_width="match_parent"
+                android:layout_height="25dp"
+                android:background="@color/white" />
 
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="250dp">
+
+                <ImageView
+                    android:id="@+id/imageView10"
+                    android:layout_width="390dp"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/healthcare_bar" />
+
+                <TextView
+                    android:id="@+id/textView"
+                    android:layout_width="293dp"
+                    android:layout_height="52dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginStart="50dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginEnd="50dp"
+                    android:layout_marginBottom="170dp"
+                    android:fontFamily="@font/montserrat"
+                    android:gravity="center"
+                    android:text="Прогресс в этом месяце"
+                    android:textColor="@color/white"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:typeface="normal"
+                    app:layout_constraintHorizontal_bias="0.875"
+                    app:layout_constraintVertical_bias="0.116" />
 
                 <com.github.mikephil.charting.charts.PieChart
                     android:id="@+id/pieChart"
-                    android:layout_width="300dp"
-                    android:layout_height="400dp"
-                    android:layout_centerInParent="true" />
+                    android:layout_width="304dp"
+                    android:layout_height="200dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginStart="44dp"
+                    android:layout_marginEnd="44dp"
+                    android:layout_marginBottom="5dp">
+
+                </com.github.mikephil.charting.charts.PieChart>
+
             </RelativeLayout>
 
             <View
                 android:layout_width="match_parent"
-                android:layout_height="65dp"
-                android:background="@color/white"/>
+                android:layout_height="11dp"
+                android:background="@color/white" />
 
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="277dp">
+
+                <ImageView
+                    android:id="@+id/imageView11"
+                    android:layout_width="match_parent"
+                    android:layout_height="252dp"
+                    android:src="@drawable/healthcare_bar" />
+
+                <TextView
+                    android:id="@+id/textView2"
+                    android:layout_width="293dp"
+                    android:layout_height="52dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginStart="50dp"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginEnd="50dp"
+                    android:layout_marginBottom="214dp"
+                    android:fontFamily="@font/montserrat"
+                    android:gravity="center"
+                    android:text="Прогресс за 6 месяцев"
+                    android:textColor="@color/white"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:typeface="normal"
+                    app:layout_constraintHorizontal_bias="0.875"
+                    app:layout_constraintVertical_bias="0.116" />
 
                 <com.github.mikephil.charting.charts.BarChart
                     android:id="@+id/barChart"
-                    android:layout_width="300dp"
-                    android:layout_height="400dp"
-                    android:layout_centerInParent="true" />
+                    android:layout_width="337dp"
+                    android:layout_height="215dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginStart="25dp"
+                    android:layout_marginTop="60dp"
+                    android:layout_marginEnd="31dp"
+                    android:layout_marginBottom="47dp" />
             </RelativeLayout>
 
             <View
