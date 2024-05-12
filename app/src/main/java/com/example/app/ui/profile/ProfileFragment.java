@@ -105,6 +105,14 @@ public class ProfileFragment extends Fragment {
         {
             days30.setImageResource(R.drawable.thirtydays);
         }
+        strength5 = rootView.findViewById(R.id.imageView4);
+        strength10 = rootView.findViewById(R.id.imageView5);
+        strength30 = rootView.findViewById(R.id.imageView6);
+        strengthSessions = 6;
+        if (strengthSessions >= 5 )
+        {
+            strength5.setImageResource(R.drawable.fivestrength);
+        }
         return rootView;
 
     }

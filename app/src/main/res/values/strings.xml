@@ -34,6 +34,8 @@
     <string name="back">Вернуться</string>
     <string name="progress">Прогресс за 6 месяцев</string>
     <string name="curProgress">Прогресс в этом месяце</string>
+    <string name="lifestyle">Образ жизни</string>
+    <string name="countOfTrainings">Количество занятий в месяц</string>
     <array name="material_calendar_months_array">
         <item>Январь</item>
         <item>Февраль</item>
