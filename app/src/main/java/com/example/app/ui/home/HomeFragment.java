@@ -106,6 +106,16 @@ public class HomeFragment extends Fragment {
         barChart = (BarChart) root.findViewById(R.id.barChart);
         barChart.getDescription().setEnabled(false);
 
+        barChart.getXAxis().setDrawGridLines(false);
+        barChart.getAxisLeft().setDrawGridLines(false);
+        barChart.getXAxis().setDrawLabels(false);
+        barChart.getAxisLeft().setDrawLabels(false);
+
+        barChart.getAxisRight().setDrawGridLines(false);
+        barChart.getAxisRight().setDrawLabels(false);
+
+
+
         ArrayList<BarEntry> entries2 = new ArrayList<>();
         entries2.add(new BarEntry(1, 20));
         entries2.add(new BarEntry(2, 25));
@@ -113,13 +123,10 @@ public class HomeFragment extends Fragment {
         entries2.add(new BarEntry(4, 5));
         entries2.add(new BarEntry(5, 50));
         entries2.add(new BarEntry(6, 10));
-        BarDataSet dataSet2 = new BarDataSet(entries2, "Label");
-
-        int teal = 0xFF03DAC5;
-        dataSet2.setLabel("Количество тренировок в месяц");
-        dataSet2.setColor(teal);
-        dataSet2.setValueTextColor(Color.BLACK);
-        dataSet2.setValueTextSize(15f);
+        BarDataSet dataSet2 = new BarDataSet(entries2, "");
+        barChart.getLegend().setEnabled(false);
+        dataSet2.setColor(pink);
+        dataSet2.setDrawValues(false);
         BarData data2 = new BarData(dataSet2);
         barChart.setData(data2);
         barChart.invalidate();
