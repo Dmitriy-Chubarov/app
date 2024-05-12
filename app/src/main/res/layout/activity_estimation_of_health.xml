@@ -12,14 +12,20 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_marginTop="41dp"
-        android:text="Оцените свое самочувстие" />
+        android:fontFamily="@font/montserrat"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:textColor="@color/purpleTint"
+        android:text="@string/estimateHealth" />
 
     <ListView
         android:id="@+id/listView"
         android:layout_width="match_parent"
         android:layout_height="473dp"
         android:layout_below="@+id/text_health"
-        android:layout_marginTop="16dp"></ListView>
+        android:layout_marginTop="16dp">
+    </ListView>
 
     <Button
         android:layout_width="match_parent"
@@ -27,6 +33,9 @@
         android:id="@+id/estimBtnBack"
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="11dp"
-        android:text="Вернуться" />
+        android:fontFamily="@font/montserrat"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        android:text="@string/back" />
 
 </RelativeLayout>

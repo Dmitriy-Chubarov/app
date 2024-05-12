@@ -20,7 +20,7 @@
         android:id="@+id/button"
         android:layout_width="275dp"
         android:layout_height="67dp"
-        android:backgroundTint="#FC8086"
+        android:backgroundTint="@color/pink"
         android:text="@string/checkState"
         android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="@+id/imageView11"
@@ -49,7 +49,7 @@
         android:layout_marginStart="40dp"
         android:layout_marginTop="64dp"
         android:layout_marginEnd="40dp"
-        android:hint="Тип тренировки"
+        android:hint="@string/trainingType"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.49"
         app:layout_constraintStart_toStartOf="parent"
@@ -60,11 +60,11 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:backgroundTint="#6200ED"
+            android:backgroundTint="@color/purpleTint"
             android:fontFamily="@font/montserrat"
-            android:hint="Тип тренировки"
+            android:hint="@string/trainingType"
             android:inputType="none"
-            android:text="Тип тренировки" />
+            android:text="@string/trainingType" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -75,7 +75,7 @@
         android:layout_marginStart="40dp"
         android:layout_marginTop="30dp"
         android:layout_marginEnd="40dp"
-        android:hint="Сложность тренировки"
+        android:hint="@string/trainingPace"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.49"
         app:layout_constraintStart_toStartOf="parent"
@@ -87,9 +87,9 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:fontFamily="@font/montserrat"
-            android:hint="Сложность тренировки"
+            android:hint="@string/trainingPace"
             android:inputType="none"
-            android:text="Сложность тренировки" />
+            android:text="@string/trainingPace" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <ImageView
@@ -110,7 +110,7 @@
         android:layout_height="117dp"
         android:fontFamily="@font/montserrat"
         android:gravity="center"
-        android:text="Не тренируйтесь при плохом самочувствии"
+        android:text="@string/disclaimer"
         android:textColor="@color/white"
         android:textSize="20sp"
         android:textStyle="bold"

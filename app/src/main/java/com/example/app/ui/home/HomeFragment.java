@@ -75,7 +75,7 @@ public class HomeFragment extends Fragment {
         pieChart.getDescription().setEnabled(false);
 
         ArrayList<PieEntry> entries = new ArrayList<>();
-        entries.add(new PieEntry(25f, "Выполнено"));
+        entries.add(new PieEntry(65f, "Выполнено"));
         entries.add(new PieEntry(35f, "Пропущено"));
         PieDataSet dataSet = new PieDataSet(entries, "");
 
@@ -113,8 +113,6 @@ public class HomeFragment extends Fragment {
 
         barChart.getAxisRight().setDrawGridLines(false);
         barChart.getAxisRight().setDrawLabels(false);
-
-
 
         ArrayList<BarEntry> entries2 = new ArrayList<>();
         entries2.add(new BarEntry(1, 20));

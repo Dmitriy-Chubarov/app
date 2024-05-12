@@ -83,7 +83,7 @@
                     android:layout_weight="1"
                     android:fontFamily="@font/montserrat"
                     android:inputType="none"
-                    android:text="Пол" />
+                    android:text="@string/sex" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -95,7 +95,7 @@
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="20dp"
                 android:layout_marginEnd="50dp"
-                android:hint="Образ жизни"
+                android:hint="@string/lifestyle"
                 android:textSize="28sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.347"
@@ -109,7 +109,7 @@
                     android:layout_weight="1"
                     android:fontFamily="@font/montserrat"
                     android:inputType="none"
-                    android:text="Образ жизни"
+                    android:text="@string/lifestyle"
                     tools:layout_editor_absoluteX="134dp"
                     tools:layout_editor_absoluteY="293dp" />
             </com.google.android.material.textfield.TextInputLayout>
@@ -122,7 +122,7 @@
                 android:layout_marginStart="35dp"
                 android:layout_marginTop="20dp"
                 android:layout_marginEnd="35dp"
-                android:hint="Количество занятий в месяц"
+                android:hint="@string/countOfTrainings"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
@@ -205,7 +205,6 @@
                 android:layout_height="110dp"
                 android:layout_marginTop="20dp"
                 app:layout_constraintEnd_toStartOf="@+id/imageView5"
-                app:layout_constraintHorizontal_bias="0.533"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/imageView"
                 app:srcCompat="@drawable/strength5unachieved" />
@@ -215,10 +214,11 @@
                 android:layout_width="110dp"
                 android:layout_height="110dp"
                 android:layout_marginTop="20dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.498"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/imageView2"
-                app:srcCompat="@drawable/strength10unachieved"
-                tools:ignore="MissingConstraints"
-                tools:layout_editor_absoluteX="155dp" />
+                app:srcCompat="@drawable/strength10unachieved" />
 
             <ImageView
                 android:id="@+id/imageView6"
