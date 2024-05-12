@@ -30,6 +30,10 @@
     <string name="trainingType">Тип тренировки</string>
     <string name="trainingPace">Сложность тренировки</string>
     <string name="disclaimer">Не тренируйтесь при плохом самочувствии</string>
+    <string name="estimateHealth">Оцените свое самочувстие</string>
+    <string name="back">Вернуться</string>
+    <string name="progress">Прогресс за 6 месяцев</string>
+    <string name="curProgress">Прогресс в этом месяце</string>
     <array name="material_calendar_months_array">
         <item>Январь</item>
         <item>Февраль</item>
