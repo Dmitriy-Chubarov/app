@@ -18,6 +18,7 @@ import androidx.lifecycle.ViewModelProvider;
 import com.example.app.databinding.FragmentHomeBinding;
 import com.github.mikephil.charting.charts.BarChart;
 import com.github.mikephil.charting.charts.PieChart;
+import com.github.mikephil.charting.components.Legend;
 import com.github.mikephil.charting.data.BarData;
 import com.github.mikephil.charting.data.BarDataSet;
 import com.github.mikephil.charting.data.BarEntry;
@@ -76,18 +77,31 @@ public class HomeFragment extends Fragment {
         ArrayList<PieEntry> entries = new ArrayList<>();
         entries.add(new PieEntry(25f, "Выполнено"));
         entries.add(new PieEntry(35f, "Пропущено"));
-        PieDataSet dataSet = new PieDataSet(entries, "Pie Chart");
+        PieDataSet dataSet = new PieDataSet(entries, "");
 
-        int purple500 = 0xFF6200EE;
-        dataSet.setColors(purple500, Color.GRAY);
+        int pink = Color.parseColor("#FC8086");
+        dataSet.setColors(pink, Color.LTGRAY);
         dataSet.setValueTextSize(25f);
-        dataSet.setValueTextColors(Arrays.asList(Color.GRAY, purple500));
-        pieChart.setEntryLabelColor(Color.BLACK);
+        dataSet.setValueTextColors(Arrays.asList(Color.GRAY, pink));
+        pieChart.setHoleRadius(75);
         pieChart.setHoleColor(Color.TRANSPARENT);
+
 
         PieData data = new PieData(dataSet);
         pieChart.setData(data);
         pieChart.invalidate(); // refresh chart
+        pieChart.setDrawSliceText(false);
+        pieChart.setDrawMarkers(false);
+        data.setDrawValues(false);
+        pieChart.getDescription().setEnabled(false);
+        Legend l = pieChart.getLegend(); // get legend of pie
+        l.setVerticalAlignment(Legend.LegendVerticalAlignment.CENTER); // set vertical alignment for legend
+        l.setHorizontalAlignment(Legend.LegendHorizontalAlignment.RIGHT); // set horizontal alignment for legend
+        l.setOrientation(Legend.LegendOrientation.VERTICAL);
+        l.setTextColor(Color.WHITE);
+        l.setFormSize(20f);
+        l.setTextSize(20f);
+        l.setDrawInside(false);
 
         barChart = (BarChart) root.findViewById(R.id.barChart);
         barChart.getDescription().setEnabled(false);
