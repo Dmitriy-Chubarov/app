@@ -27,18 +27,27 @@
 
             <View
                 android:id="@+id/view"
+                app:layout_constraintTop_toBottomOf="@id/calendarView"
                 android:layout_width="match_parent"
                 android:layout_height="25dp"
                 android:background="@color/white" />
 
             <RelativeLayout
                 android:layout_width="match_parent"
+                app:layout_constraintTop_toBottomOf="@id/view"
                 android:layout_height="250dp">
 
                 <ImageView
                     android:id="@+id/imageView10"
-                    android:layout_width="390dp"
-                    android:layout_height="match_parent"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    android:layout_centerInParent="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentBottom="true"
                     android:src="@drawable/healthcare_bar" />
 
                 <TextView
@@ -56,6 +65,7 @@
                     android:fontFamily="@font/montserrat"
                     android:gravity="center"
                     android:text="@string/curProgress"
+                    android:layout_centerInParent="true"
                     android:textColor="@color/white"
                     android:textSize="20sp"
                     android:textStyle="bold"
@@ -65,11 +75,13 @@
 
                 <com.github.mikephil.charting.charts.PieChart
                     android:id="@+id/pieChart"
+                    app:layout_constraintLeft_toLeftOf="@id/imageView10"
+                    app:layout_constraintRight_toRightOf="@id/imageView10"
+                    app:layout_constraintTop_toBottomOf="@id/textView"
+                    app:layout_constraintBottom_toBottomOf="@id/imageView10"
                     android:layout_width="304dp"
                     android:layout_height="200dp"
-                    android:layout_alignParentStart="true"
-                    android:layout_alignParentEnd="true"
-                    android:layout_alignParentBottom="true"
+                    android:layout_centerInParent="true"
                     android:layout_marginStart="44dp"
                     android:layout_marginEnd="44dp"
                     android:layout_marginBottom="5dp">
@@ -91,6 +103,13 @@
                     android:id="@+id/imageView11"
                     android:layout_width="match_parent"
                     android:layout_height="252dp"
+                    android:layout_centerInParent="true"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentBottom="true"
                     android:src="@drawable/healthcare_bar" />
 
                 <TextView
@@ -108,6 +127,7 @@
                     android:fontFamily="@font/montserrat"
                     android:gravity="center"
                     android:text="@string/progress"
+                    android:layout_centerInParent="true"
                     android:textColor="@color/white"
                     android:textSize="20sp"
                     android:textStyle="bold"
@@ -117,12 +137,13 @@
 
                 <com.github.mikephil.charting.charts.BarChart
                     android:id="@+id/barChart"
+                    app:layout_constraintLeft_toLeftOf="@id/imageView11"
+                    app:layout_constraintRight_toRightOf="@id/imageView11"
+                    app:layout_constraintTop_toBottomOf="@id/textView2"
+                    app:layout_constraintBottom_toBottomOf="@id/imageView11"
                     android:layout_width="337dp"
                     android:layout_height="215dp"
-                    android:layout_alignParentStart="true"
-                    android:layout_alignParentTop="true"
-                    android:layout_alignParentEnd="true"
-                    android:layout_alignParentBottom="true"
+                    android:layout_centerInParent="true"
                     android:layout_marginStart="25dp"
                     android:layout_marginTop="60dp"
                     android:layout_marginEnd="31dp"
